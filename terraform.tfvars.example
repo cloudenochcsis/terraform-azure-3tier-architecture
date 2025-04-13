@@ -1,0 +1,38 @@
+# Resource Group and Location
+resource_group_name = "3tier-app-rg"
+location           = "eastus"
+
+# Network Configuration
+vnet_cidr          = "10.0.0.0/16"
+
+public_subnet_cidrs = [
+  "10.0.1.0/24",
+  "10.0.2.0/24"
+]
+
+private_app_subnet_cidrs = [
+  "10.0.3.0/24",
+  "10.0.4.0/24"
+]
+
+private_db_subnet_cidrs = [
+  "10.0.5.0/24",
+  "10.0.6.0/24"
+]
+
+# VM Configuration
+vm_size        = "Standard_B2s"
+admin_username = "adminuser"
+ssh_key        = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC..." # Replace with your SSH public key
+
+# Database Configuration
+db_name     = "appdb"
+db_admin    = "dbadmin"
+db_password = "YourSecurePassword123!" # Replace with a secure password
+
+# Tags
+tags = {
+  Project     = "3TierApp"
+  Environment = "Production"
+  ManagedBy   = "Terraform"
+} 
